@@ -91,9 +91,6 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
           <span className="font-[var(--font-heading)] text-xl tracking-tight">
             {question}
           </span>
-          <span className="mt-1 text-xs uppercase tracking-[0.18em] text-black/60">
-            Tap to {open ? "close" : "expand"}
-          </span>
         </div>
 
         <span
@@ -111,7 +108,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
           {/* Answer panel */}
           <div className="px-6 py-6">
-            <div className="mx-auto max-w-2xl rounded-2xl border border-black/10 bg-[#faf7f2] px-5 py-5">
+            <div className="mx-auto max-w-2xl px-5 py-5">
               <div className="whitespace-pre-line text-[20px] leading-7 text-black/85">
                 {answer}
               </div>

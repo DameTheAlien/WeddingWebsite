@@ -30,12 +30,6 @@ export default function Home() {
             View Wedding Details
           </Link>
 
-          <Link
-            href="/upload"
-            className="rounded-full border border-black/20 bg-white px-8 py-3 text-sm font-medium hover:border-black/30 transition"
-          >
-            Upload Photos
-          </Link>
         </div>
       </section>
 
