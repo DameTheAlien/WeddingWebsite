@@ -4,23 +4,22 @@ export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   const cookieVal = req.cookies.get("wedding_auth")?.value;
-  console.log("Proxy:", {
-    pathname,
-    cookieVal,
-  });
+  console.log("Proxy:", { pathname, cookieVal });
 
-  // Allow these routes only
+  // ✅ Allow public/static routes and auth routes
   if (
     pathname.startsWith("/gate") ||
     pathname.startsWith("/api/auth") ||
     pathname.startsWith("/_next") ||
-    pathname === "/favicon.ico"
+    pathname.startsWith("/images") || 
+    pathname === "/favicon.ico" ||
+    pathname === "/robots.txt" ||
+    pathname === "/sitemap.xml"
   ) {
     console.log("Proxy: allowed route");
     return NextResponse.next();
   }
 
-  // IMPORTANT: only treat exactly "1" as authed
   const authed = cookieVal === "1";
   console.log("Proxy: authed?", authed);
 

@@ -25,17 +25,9 @@ export default function RegistryPage() {
   ];
 
   return (
-    <div className="px-6 py-20 text-black">
+    <div className="px-6 py-16 text-black">
       <div className="mx-auto max-w-3xl">
         <header className="text-center">
-          <div className="mx-auto mb-4 inline-flex items-center gap-3">
-            <span className="h-[1px] w-10 bg-black/20" />
-            <span className="text-xs tracking-[0.25em] text-black/60">
-              REGISTRY
-            </span>
-            <span className="h-[1px] w-10 bg-black/20" />
-          </div>
-
           <h1 className="mb-5 font-[var(--font-heading)] text-4xl tracking-tight sm:text-5xl">
             A Note on Gifts
           </h1>

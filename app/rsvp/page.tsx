@@ -37,8 +37,8 @@ export default function RSVPPage() {
       const data = await res.json();
       if (!res.ok) throw new Error(data?.error || "Search failed");
       setResults(data.results || []);
-    } catch (err: any) {
-      setErrorMsg(err?.message || "Search failed");
+    } catch (err: unknown) {
+      setErrorMsg(err instanceof Error ? err.message : "Search failed");
       setResults([]);
     } finally {
       setSearching(false);
@@ -68,9 +68,9 @@ export default function RSVPPage() {
       if (!res.ok) throw new Error(data?.error || "Submission failed.");
 
       setStatus("success");
-    } catch (err: any) {
+    } catch (err: unknown) {
       setStatus("error");
-      setErrorMsg(err?.message || "Something went wrong.");
+      setErrorMsg(err instanceof Error ? err.message : "Something went wrong.");
     }
   }
 
@@ -80,9 +80,17 @@ export default function RSVPPage() {
         <h1 className="mb-3 text-center font-[var(--font-heading)] text-4xl tracking-tight sm:text-5xl">
           RSVP
         </h1>
+
         <p className="mb-10 text-center text-base leading-7">
           Search your name, then confirm your RSVP.
         </p>
+
+        {/* Ornamental divider */}
+        <div className="mt-10 mb-12 flex items-center justify-center gap-3">
+          <span className="h-[1px] w-16 bg-black/15" />
+          <span className="h-1.5 w-1.5 rounded-full bg-black/25" />
+          <span className="h-[1px] w-16 bg-black/15" />
+        </div>
 
         <div className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
           <label className="mb-2 block text-sm font-medium">Search your name</label>

@@ -14,6 +14,13 @@ export default function FAQPage() {
           If you have any other questions, feel free to reach out to us!
         </p>
 
+        {/* Ornamental divider */}
+        <div className="mt-10 mb-12 flex items-center justify-center gap-3">
+          <span className="h-[1px] w-16 bg-black/15" />
+          <span className="h-1.5 w-1.5 rounded-full bg-black/25" />
+          <span className="h-[1px] w-16 bg-black/15" />
+        </div>
+
         <FAQItem
           question="What is the dress code?"
           answer="Our dress code is formal / black tie optional. We recommend suits and long dresses. The ceremony will be outdoors, so plan footwear accordingly."

@@ -5,7 +5,8 @@ const navItems = [
   { href: "/faq", label: "FAQ" },
   { href: "/travel", label: "Travel" },
   { href: "/registry", label: "Registry" },
-  { href: "/photos", label: "Photos" },
+  { href: "/photos", label: "Our Story" },
+  { href: "/parties", label: "Wedding Party" },
   { href: "/rsvp", label: "RSVP" },
 ];
 
