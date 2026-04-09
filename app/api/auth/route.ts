@@ -7,10 +7,7 @@ export async function POST(req: NextRequest) {
   const correctPassword = process.env.SITE_PASSWORD;
 
   if (!correctPassword || password !== correctPassword) {
-    return NextResponse.json(
-      { ok: false },
-      { status: 401 }
-    );
+    return NextResponse.json({ ok: false }, { status: 401 });
   }
 
   const response = NextResponse.json({ ok: true });
@@ -20,7 +17,6 @@ export async function POST(req: NextRequest) {
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     path: "/",
-    maxAge: 60 * 60 * 24 * 30, // 30 days
   });
 
   return response;

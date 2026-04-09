@@ -11,9 +11,7 @@ export default function PartiesPage() {
           </h1>
 
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-black/70">
-            We’re so grateful for the friends and family who will be by our
-            side on this day. Each of them means more to us than we can put
-            into words.
+            We’re grateful to celebrate this day with our closest friends and family.
           </p>
         </header>
 
@@ -31,6 +29,12 @@ export default function PartiesPage() {
             <h2 className="mb-8 text-center font-[var(--font-heading)] text-3xl tracking-tight">
               Bachelorette Party
             </h2>
+
+            <PartyMember
+              name="Name Here"
+              role="Maid of Honor"
+              description="A lifelong best friend who has been by her side through every season of life."
+            />
 
             <PartyMember
               name="Name Here"
@@ -76,37 +80,43 @@ export default function PartiesPage() {
             </h2>
 
             <PartyMember
-              name="Name Here"
+              name="Brianna Franco"
               role="Best Man"
               description="Brother and best friend who has always had his back."
             />
 
             <PartyMember
-              name="Name Here"
+              name="Fabian Franco"
+              role="Best Man"
+              description="Brother and best friend who has always had his back."
+            />
+
+            <PartyMember
+              name="Austin Munz"
               role="Groomsman"
               description="High school friend who’s been part of countless memories."
             />
 
             <PartyMember
-              name="Name Here"
+              name="AJ Salazar"
               role="Groomsman"
               description="College teammate and lifelong supporter."
             />
 
             <PartyMember
-              name="Name Here"
+              name="Marcus Pineda-Harris"
               role="Groomsman"
               description="College teammate and lifelong supporter."
             />
 
             <PartyMember
-              name="Name Here"
+              name="Michel Rivera-Ramirez"
               role="Groomsman"
               description="College teammate and lifelong supporter."
             />
 
             <PartyMember
-              name="Name Here"
+              name="Devin Ramirez"
               role="Groomsman"
               description="College teammate and lifelong supporter."
             />
@@ -120,7 +130,7 @@ export default function PartiesPage() {
 function PartyMember({
   name,
   role,
-  description,
+  // description,
 }: {
   name: string;
   role: string;
@@ -136,9 +146,9 @@ function PartyMember({
         {role}
       </p>
 
-      <p className="mt-3 text-base leading-7 text-black/70">
+      {/* <p className="mt-3 text-base leading-7 text-black/70">
         {description}
-      </p>
+      </p> */}
     </div>
   );
 }

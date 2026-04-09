@@ -6,7 +6,7 @@ export function proxy(req: NextRequest) {
   const cookieVal = req.cookies.get("wedding_auth")?.value;
   console.log("Proxy:", { pathname, cookieVal });
 
-  // ✅ Allow public/static routes and auth routes
+  // Allow public/static routes and auth routes
   if (
     pathname.startsWith("/gate") ||
     pathname.startsWith("/api/auth") ||

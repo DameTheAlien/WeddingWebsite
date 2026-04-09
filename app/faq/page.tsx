@@ -23,31 +23,35 @@ export default function FAQPage() {
 
         <FAQItem
           question="What is the dress code?"
-          answer="Our dress code is formal / black tie optional. We recommend suits and long dresses. The ceremony will be outdoors, so plan footwear accordingly."
+          answer="We’re going with a formal dress code — suits and long dresses are encouraged. The ceremony will be outdoors under a covered tent, so plan your footwear accordingly."
         />
         <FAQItem
           question="What time should I arrive?"
-          answer="The ceremony will begin promptly at 4:30 PM. We recommend arriving 20–30 minutes early to find parking and get seated."
+          answer={<>The ceremony will begin promptly at 3:30 PM — we recommend arriving 20–30 minutes early to allow time for parking, the walk to the venue, and getting seated.</>}
         />
         <FAQItem
           question="Is the ceremony indoors or outdoors?"
-          answer="The ceremony will take place outdoors, weather permitting. The reception will be indoors."
+          answer="The ceremony will be outdoors under a covered tent, with the reception held indoors."
         />
         <FAQItem
           question="Will transportation be provided?"
-          answer="Shuttle service will be available from the hotel block to the venue and back at the end of the evening. More details to come."
+          answer="Following the ceremony at Hummingbird Tent, shuttle service will be provided to the reception at Cottonwoods, where cocktail hour will begin."
         />
         <FAQItem
           question="Is there parking at the venue?"
-          answer="Yes, there is on-site parking available. Valet service will also be provided."
+          answer="Yes, there is free on-site parking available."
+        />
+        <FAQItem
+          question="How do I get to the ceremony after parking?"
+          answer="After entering the resort, signage will guide you to the ceremony location. Please allow a few extra minutes to walk from the entrance to the venue."
         />
         <FAQItem
           question="Are children invited?"
-          answer="While we love your little ones, this will be an adults-only celebration unless otherwise specified on your invitation."
+          answer="While we love your little ones, this will be an adults-only celebration."
         />
         <FAQItem
           question="Can I bring a plus one?"
-          answer="If your invitation includes a guest name, they are invited! Due to venue capacity, we are unable to accommodate additional guests beyond those listed."
+          answer="Guests included in your invitation will also appear when you search your name in the RSVP. Due to venue capacity, we’re only able to accommodate those listed."
         />
         <FAQItem
           question="What should I do if I have dietary restrictions?"
@@ -55,11 +59,11 @@ export default function FAQPage() {
         />
         <FAQItem
           question="How do I RSVP?"
-          answer="You can RSVP through the RSVP page on this website. Please respond by [INSERT RSVP DEADLINE]."
+          answer={<>You can RSVP through the RSVP page on this website. Please respond by <em>April 24, 2027</em>.</>}
         />
         <FAQItem
           question="Where should we stay?"
-          answer="We’ve reserved hotel room blocks at [HOTEL NAME]. Visit the Travel page for booking details and discount codes."
+          answer="We’re not reserving a hotel block, but we’ve included nearby recommendations on the Travel page."
         />
         <FAQItem
           question="Is there a wedding registry?"
@@ -71,21 +75,28 @@ export default function FAQPage() {
         />
         <FAQItem
           question="What is the schedule for the day?"
-          answer={`Ceremony: 4:30 PM
-Cocktail Hour: 5:30 PM
-Reception: 6:30 PM
-After Party: TBD`}
-        />
+         answer={
+            <div className="space-y-1">
+              <p>Ceremony: 3:30 PM</p>
+              <p>Cocktail Hour: 4:30 PM</p>
+              <p>Dinner: 5:30 PM</p>
+              <p>Reception: 6:30 PM</p>
+              <p className="italic pt-2">
+                Please note that these times are approximate and may be adjusted on the day of the event.
+              </p>
+            </div>
+          }/
+      >
         <FAQItem
           question="Who should I contact if I have more questions?"
-          answer="Feel free to reach out to Meiling or Damian at (505) 967-2005 for any additional information."
+          answer="Feel free to reach out to Meiling or Damian at our numbers (505)506-9643 or (505)967-2005 for any additional information."
         />
       </div>
     </div>
   );
 }
 
-function FAQItem({ question, answer }: { question: string; answer: string }) {
+function FAQItem({ question, answer }: { question: string; answer: React.ReactNode; }) {
   const [open, setOpen] = useState(false);
 
   return (

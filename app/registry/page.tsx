@@ -59,7 +59,7 @@ export default function RegistryPage() {
             </p>
           </div>
 
-          {/* Suggested amounts (optional UI) */}
+          {/* Suggested amounts (optional UI)
           <div className="grid gap-3 sm:grid-cols-2">
             {quickAmounts.map((a) => (
               <div
@@ -75,7 +75,7 @@ export default function RegistryPage() {
                 <div className="mt-1 text-sm text-black/60">{a.desc}</div>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Buttons */}
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
