@@ -28,7 +28,7 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
       <Link
         href="/"
-        className="flex items-center gap-1 text-xl transition duration-200 ease-out hover:-translate-y-[1px] hover:scale-105 hover:opacity-70"
+        className="flex items-center gap-2 text-xl transition duration-200 ease-out hover:-translate-y-[1px] hover:scale-105 hover:opacity-70"
         onClick={() => setMenuOpen(false)}
       >
         <Image
