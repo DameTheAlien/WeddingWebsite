@@ -1,8 +1,14 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display, Inter, Great_Vibes } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-script",
+});
 
 const heading = Playfair_Display({
   subsets: ["latin"],
@@ -27,7 +33,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${heading.variable} ${body.variable}`}>
+   <html
+        lang="en"
+        className={`${heading.variable} ${body.variable} ${greatVibes.variable}`}
+      >
       <body className="min-h-screen bg-[#faf7f2] text-black antialiased">
         <Header />
         <main className="min-h-[80vh]">{children}</main>

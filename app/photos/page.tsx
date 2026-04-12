@@ -42,49 +42,74 @@ const beats: StoryBeat[] = [
 
 const photos: StoryPhoto[] = [
   {
-    src: "/story/engagement-1.jpg",
+    src: "/images/story/engagement-1.jpg",
     alt: "Engagement photo 1",
-    caption: "Engagement • A moment we’ll never forget",
+    caption: "Engagement 1",
   },
   {
-    src: "/story/engagement-2.jpg",
+    src: "/images/story/engagement-2.jpg",
     alt: "Engagement photo 2",
-    caption: "Engagement • Just us",
+    caption: "Engagement 2",
   },
   {
-    src: "/story/engagement-3.jpg",
+    src: "/images/story/engagement-3.jpg",
     alt: "Engagement photo 3",
-    caption: "Engagement • The beginning of forever",
+    caption: "Engagement 3",
   },
   {
-    src: "/story/nyc-1.jpg",
+    src: "/images/story/photo-1.jpeg",
     alt: "Photo 1",
     caption: "Photo 1 Caption",
   },
   {
-    src: "/story/nyc-2.jpg",
+    src: "/images/story/photo-2.jpeg",
     alt: "Photo 2",
     caption: "Photo 2 Caption",
   },
   {
-    src: "/story/nyc-3.jpg",
+    src: "/images/story/photo-3.jpeg",
     alt: "Photo 3",
     caption: "Photo 3 Caption",
   },
   {
-    src: "/story/nyc-4.jpg",
+    src: "/images/story/photo-4.jpeg",
     alt: "Photo 4",
     caption: "Photo 4 Caption",
   },
   {
-    src: "/story/nyc-5.jpg",
+    src: "/images/story/photo-5.jpeg",
     alt: "Photo 5",
     caption: "Photo 5 Caption",
   },
   {
-    src: "/story/nyc-6.jpg",
+    src: "/images/story/photo-6.jpeg",
     alt: "Photo 6",
     caption: "Photo 6 Caption",
+  },
+  {
+    src: "/images/story/photo-7.jpeg",
+    alt: "Photo 7",
+    caption: "Photo 7 Caption",
+  },
+  {
+    src: "/images/story/photo-8.jpeg",
+    alt: "Photo 8",
+    caption: "Photo 8 Caption",
+  },
+  {
+    src: "/images/story/photo-9.jpeg",
+    alt: "Photo 9",
+    caption: "Photo 9 Caption",
+  },
+  {
+    src: "/images/story/cat-1.jpeg",
+    alt: "Cat 1",
+    caption: "Cat 1 Caption",
+  },
+  {
+    src: "/images/story/dog-1.jpeg",
+    alt: "Dog 1",
+    caption: "Dog 1 Caption",
   }
 ];
 
@@ -116,11 +141,11 @@ export default function StoryPage() {
           <div className="relative overflow-hidden rounded-3xl border border-black/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
             <div className="relative aspect-[16/7] w-full">
               <Image
-                src="/story/hero.jpg"
+                src="/images/story/hero.jpg"
                 alt="A favorite photo of us"
                 fill
                 priority
-                className="object-cover"
+                className="object-cover object-[center_60%]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
             </div>
@@ -205,7 +230,31 @@ export default function StoryPage() {
             </p>
 
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {photos.map((p) => (
+              {photos.slice(0, -2).map((p) => (
+                <figure
+                  key={p.src}
+                  className="group overflow-hidden rounded-3xl border border-black/10 bg-white shadow-[0_12px_40px_rgba(0,0,0,0.06)]"
+                >
+                  <div className="relative aspect-[4/5] w-full overflow-hidden">
+                    <Image
+                      src={p.src}
+                      alt={p.alt}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  </div>
+                  {p.caption ? (
+                    <figcaption className="px-5 py-4 text-sm text-black/70">
+                      {p.caption}
+                    </figcaption>
+                  ) : null}
+                </figure>
+              ))}
+            </div>
+
+            <div className="mx-auto mt-6 grid max-w-3xl gap-6 sm:grid-cols-2">
+              {photos.slice(-2).map((p) => (
                 <figure
                   key={p.src}
                   className="group overflow-hidden rounded-3xl border border-black/10 bg-white shadow-[0_12px_40px_rgba(0,0,0,0.06)]"

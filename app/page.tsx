@@ -1,4 +1,10 @@
 import Image from "next/image";
+import { Great_Vibes } from "next/font/google";
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export default function Home() {
   return (
@@ -10,13 +16,13 @@ export default function Home() {
           alt="Meiling and Damian"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-[center_80%]"
         />
       </section>
 
       {/* names + main info (now BELOW image) */}
       <section className="mx-auto max-w-3xl px-6 py-20 text-center">
-        <h1 className="mb-8 font-[var(--font-heading)] text-5xl tracking-tight sm:text-6xl">
+        <h1 className={`${greatVibes.className} mb-8 text-6xl sm:text-7xl leading-tight`}>
           Meiling & Damian
         </h1>
 
@@ -34,16 +40,16 @@ export default function Home() {
       {/* two large side-by-side images */}
       <section className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="relative h-[420px] sm:h-[520px] md:h-[620px]">
+          <div className="relative h-[300px] sm:h-[380px] md:h-[460px]">
             <Image
-              src="/images/home/photo-1.jpg"
+              src="/images/home/photo-3.jpg"
               alt="Meiling and Damian together"
               fill
               className="object-cover"
             />
           </div>
 
-          <div className="relative h-[420px] sm:h-[520px] md:h-[620px]">
+          <div className="relative h-[300px] sm:h-[380px] md:h-[460px]">
             <Image
               src="/images/home/photo-2.jpg"
               alt="Meiling and Damian portrait"
