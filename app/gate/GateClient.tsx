@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 export default function GateClient() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const next = searchParams.get("next") || "/";
 
@@ -33,8 +32,7 @@ export default function GateClient() {
         return;
       }
 
-      router.replace(next);
-      router.refresh();
+      window.location.href = next;
     } catch {
       setError("Something went wrong. Please try again.");
       setLoading(false);
