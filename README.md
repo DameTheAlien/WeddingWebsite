@@ -106,17 +106,6 @@ Install dependencies:
 npm install
 ```
 
-Create a `.env.local` file containing your environment variables:
-
-```env
-SITE_PASSWORD=
-
-GOOGLE_SHEETS_SPREADSHEET_ID=
-GOOGLE_SHEETS_SHEET_NAME=
-GOOGLE_SHEETS_CLIENT_EMAIL=
-GOOGLE_SHEETS_PRIVATE_KEY=
-```
-
 Start the development server:
 
 ```bash
